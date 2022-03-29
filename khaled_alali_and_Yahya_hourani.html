@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Lady Bugs</title>
+</head>
+
+<body>
+    <script>
+
+        const happyLadybugs = () => {
+            let i = 0;
+            let nb_of_game = prompt('please enter the number of trying');
+
+            while (i < nb_of_game) {
+
+                let nb_of_string = prompt('please enter the length of string');
+                let string_game = prompt('please enter a string');
+
+                //cheking if the string is happy ladygus or not 
+                if (string_game.length == nb_of_string) {
+                    (string_game.includes('_') ? string_game.split('').sort() : string_game.split(''))
+                        .filter(c => c != '_')
+                        .every((c, i, a) => c == a[i + 1] || c == a[i - 1]) ? alert('YES') : alert('NO');
+                }
+                else { alert("Enter a true number of character!"); }
+                i++;
+            }
+        }
+        happyLadybugs();  
+    </script>
+</body>
+
+</html>
